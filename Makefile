@@ -12,7 +12,7 @@ CXXFLAGS := -std=c++20 -Wall -Wextra -Werror -MMD
 LDFLAGS := -lSDL2
 
 $(BUILD_DIR)/main: $(OBJECTS_FILES)
-	$(CXX) $(LDFLAGS) -o$@ $^
+	$(CXX) $^ -o$@ $(LDFLAGS)
 
 $(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp | $(BUILD_DIR)
 	$(CXX) -c $(CPPFLAGS) $(CXXFLAGS) -o$@ $<
